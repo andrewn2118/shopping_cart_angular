@@ -1,5 +1,5 @@
 angular.module('shoppingCart').service('ShoppingCartService', function(){
-  const cart = [],
+  const cart = {},
         data = [
           {
             "_id": "55c8ee82152165d244b98300",
@@ -122,4 +122,24 @@ angular.module('shoppingCart').service('ShoppingCartService', function(){
             "categories": ["spring", "warm","winter"]
           }
         ];
+
+  function getData(){
+    return data;
+  }
+
+  function addToCart(item, amt){
+    cart[item] = cart[item] ? amt : 1;
+    return cart;
+  }
+
+  function updateCart(item, amt){
+    amt ? cart[item] = amt : delete cart[item];
+    return cart;
+  }
+
+  return {
+    getData,
+    addToCart,
+    updateCart
+  }
 });

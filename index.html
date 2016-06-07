@@ -6,63 +6,15 @@
   <base href="/">
 </head>
 <body>
-  <div class="container">
-    <h1 class="page-header">Welcome to MEAN Tea!</h1>
-    <ul class="nav nav-pills">
-      <li role="presentation"><a href="#">Home</a></li>
-      <li role="presentation"><a href="#">Profile</a></li>
-      <li role="presentation"><a href="#">Messages</a></li>
-    </ul>
-  </div>
-  <div class="container">
-    <table class="table table-bordered">
-      <tr>
-        <td colspan="2">
-          <form class="form-inline">
-            <label>Search by category: </label>
-            <select class="form-control input-sm" ng-model="category">
-              <option value="awesome">awesome</option>
-              <option value="cold">cold</option>
-              <option value="dark">dark</option>
-              <option value="dry">dry</option>
-              <option value="hot">hot</option>
-              <option value="lucid">lucid</option>
-              <option value="spring">spring</option>
-              <option value="summer">summer</option>
-              <option value="warm">warm</option>
-              <option value="winter">winter</option>
-            </select>
-            <label>Search by name: </label>
-            <input type="text" class="form-control input-sm">
-          </form>
-        </td>
-        <td>
-          <button type="button" class="btn btn-primary"><strong>Checkout</strong> | Bag: {{cart.items || 'Empty!'}}</button>
-        </td>
-      </tr>
-      <tr>
-        <td>Tea</td>
-        <td>Information</td>
-        <td>
-          <form class="form-inline">
-            <label>Sort by price: </label>
-            <select class="form-control input-sm" ng-model="price">
-              <option value="lowest">lowest</option>
-              <option value="highest">highest</option>  
-            </select>
-          </form>
-        </td>
-      </tr>
-    </table>
-  </div>
+  <sc-nav-bar></sc-nav-bar>
 
-  <div ng-view></div>
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
   <script src="./js/app.js"></script>
   <script src="./js/services.js"></script>
   <script src="./js/controllers.js"></script>
+  <script src="./js/directives.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
 </body>

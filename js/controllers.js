@@ -4,5 +4,6 @@ angular.module('shoppingCart').controller('ShoppingCartController', ShoppingCart
 
   function ShoppingCartController(ShoppingCartService){
     const vm = this;
+    vm.cart = ShoppingCartService.getCart();
     vm.inventory = ShoppingCartService.getData();
   }

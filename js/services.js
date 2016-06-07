@@ -123,6 +123,10 @@ angular.module('shoppingCart').service('ShoppingCartService', function(){
           }
         ];
 
+  function getCart(){
+    return cart;
+  }
+
   function getData(){
     return data;
   }
@@ -138,6 +142,7 @@ angular.module('shoppingCart').service('ShoppingCartService', function(){
   }
 
   return {
+    getCart,
     getData,
     addToCart,
     updateCart

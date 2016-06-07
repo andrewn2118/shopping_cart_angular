@@ -2,6 +2,7 @@
   <form class="form-inline category-form">
     <label>Search by category: </label>
     <select class="form-control input-sm" ng-model="category">
+      <option value=""></option>
       <option value="awesome">awesome</option>
       <option value="cold">cold</option>
       <option value="dark">dark</option>
@@ -15,7 +16,7 @@
     </select>
 
     <label>Search by name: </label>
-    <input type="text" class="form-control input-sm">
+    <input type="text" class="form-control input-sm" ng-model="search">
   </form>
 
   <button type="button" class="btn btn-danger float-right"><strong>Checkout</strong> | Bag: {{cart.items || 'Empty!'}}</button>
@@ -34,7 +35,7 @@
         </form>
       </td>
     </tr>
-    <tr ng-repeat="tea in shop.inventory | orderBy : price : reverse === 'low' ? false : true">
+    <tr ng-repeat="tea in shop.inventory | orderBy : 'price' : reverse === 'low' ? false : true | filter : category"> 
       <td class="tea-col"><img ng-src="{{tea.imageUrl}}"></td>
       <td>
         <div>
@@ -42,6 +43,8 @@
           <form class="form-inline float-right">
             <label><h3>Quanitity:</h3></label>
             <select class="form-control input-sm" ng-model="quantity">
+              <option value=""></option>
+              <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
@@ -52,10 +55,11 @@
               <option value="9">9</option>
               <option value="10">10</option>
             </select>
+            <button type="submit" class="btn btn-warning btn-sm">add to cart</button>
           </form>
         </div>
         <div class="clearfix">
-          <p><strong>Price: </strong>{{tea.price | currency}}</p>
+          <p><strong>Price: </strong>{{tea.price / 100 | currency}}</p>
           <p><strong>Caffeine Scale: </strong>{{tea.caffeineScale}}</p>
           <p><strong>Ingredients: </strong>{{tea.ingredients}}</p>
           <p><strong>Rating: </strong>{{tea.rating}}</p>

@@ -42,19 +42,7 @@
           <h3 class="float-left">{{tea.name}}</h3>
           <form class="form-inline float-right">
             <label><h3>Quanitity:</h3></label>
-            <select class="form-control input-sm" ng-model="quantity">
-              <option value=""></option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
+            <input type="number" ng-model="quantity">
             <button type="submit" class="btn btn-warning btn-sm">add to cart</button>
           </form>
         </div>

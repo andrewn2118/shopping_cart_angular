@@ -10,5 +10,5 @@ angular.module('shoppingCart').component('scTeasTable', {
 
   },
   controllerAs: 'teas',
-  controller: TeasController
+  controller: 'TeasController'
 });

@@ -12,5 +12,5 @@ angular.module('shoppingCart')
       })
       .otherwise({
         templateUrl: '../partials/teas.html'
-      })
+      });
   });

@@ -6,18 +6,22 @@
   display: inline-block;
 }
 
-.float-right {
-  float: right;
-}
-
-.float-left {
-  float: left;
-}
-
 .clearfix {
   clear: both;
 }
 
 .tea-col {
   width: 250px;
+}
+
+.checkout-btn {
+  width: 200px;
+}
+
+.checkout-product {
+  width: 600px;
+}
+
+.checkout-quantity, .checkout-subtotal {
+  width: 125px;
 }

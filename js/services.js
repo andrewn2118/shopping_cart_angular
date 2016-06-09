@@ -140,10 +140,10 @@ angular.module('shoppingCart').service('ShoppingCartService', function(){
   function addToCart(item){
     var idx = cart.indexOf(item);
     if(idx === -1){
+      item.quantity = +item.addQuantity;
       cart.push(item);
     }
     else {
-      debugger
       cart[idx].quantity = +cart[idx].quantity + +item.quantity;
     }
     return cart;

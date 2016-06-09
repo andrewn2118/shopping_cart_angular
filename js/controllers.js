@@ -16,9 +16,9 @@ angular
     };
   }
 
-  CheckoutController.$inject = ['ShoppingCartService'];
+  CheckoutController.$inject = ['ShoppingCartService', '$route'];
 
-  function CheckoutController(ShoppingCartService){
+  function CheckoutController(ShoppingCartService, $route){
     const vm = this;
     vm.cart = ShoppingCartService.getCart();
 
@@ -32,5 +32,6 @@ angular
 
     vm.deleteFromCart = function(item){
       vm.cart = ShoppingCartService.removeFromCart(item);
+      $route.reload();
     }
   }

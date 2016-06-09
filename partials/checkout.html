@@ -26,7 +26,7 @@
       <td class="checkout-subtotal"><span>{{tea.subtotal(tea.price, tea.quantity)}}</span></td>
       <td class="checkout-btn">
         <button class="btn btn-warning" ng-click="">Edit</button>
-        <button class="btn btn-danger" ng-click="">Remove</button>
+        <button class="btn btn-danger" ng-click="checkout.deleteFromCart(tea)">Remove</button>
       </td>
     </tr>
   </table>

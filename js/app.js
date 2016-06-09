@@ -8,7 +8,9 @@ angular.module('shoppingCart')
         templateUrl: '../partials/teas.html'
       })
       .when('/checkout', {
-        templateUrl: '../partials/checkout.html'
+        templateUrl: '../partials/checkout.html',
+        controller: 'CheckoutController',
+        controllerAs: 'checkout'
       })
       .otherwise({
         templateUrl: '../partials/teas.html'

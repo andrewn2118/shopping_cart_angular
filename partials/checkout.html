@@ -10,13 +10,23 @@
       <td class="checkout-quantity">Quantity</td>
       <td class="checkout-subtotal">Sub-total</td>
     </tr>
-    <tr ng-repeat="tea in cart">
-      <td class="checkout-product"></td>
-      <td class="checkout-quantity"></td>
-      <td class="checkout-subtotal"></td>
+    <tr ng-repeat="tea in checkout.cart">
+      <td class="checkout-product">
+        <div>
+          <h3>{{tea.name}}</h3>
+          <img ng-src="{{tea.imageUrl}}">
+          <p><strong>Caffeine Scale: </strong>{{tea.caffeineScale}}</p>
+          <p><strong>Ingredients: </strong>{{tea.ingredients}}</p>
+          <p><strong>Rating: </strong>{{tea.rating}}</p>
+        </div>
+      </td>
+      <td class="checkout-quantity">
+        <span>{{tea.quantity}}</span>
+      </td>
+      <td class="checkout-subtotal"><span>{{tea.subtotal(tea.price, tea.quantity)}}</span></td>
       <td class="checkout-btn">
-        <button class="btn btn-warning">Edit</button>
-        <button class="btn btn-danger">Remove</button>
+        <button class="btn btn-warning" ng-click="">Edit</button>
+        <button class="btn btn-danger" ng-click="">Remove</button>
       </td>
     </tr>
   </table>

@@ -19,7 +19,7 @@
     <input type="text" class="form-control input-sm" ng-model="search">
   </form>
 
-  <a href="/checkout" role="button" class="btn btn-danger pull-right"><strong>Checkout</strong> | Bag: {{cart.items || 'Empty!'}}</a>
+  <a href="/checkout" role="button" class="btn btn-danger pull-right"><strong>Checkout</strong> | Bag: {{shop.cart || 'Empty!'}}</a>
 
   <table class="table table-bordered">
     <tr>
@@ -43,7 +43,7 @@
           <form class="form-inline form-group-sm pull-right">
             <span class="form-group form-group-sm">
               <label><h3>Quanitity:</h3></label>
-              <select class="form-controler input-sm" ng-model="quantity">
+              <select class="form-controler input-sm" ng-model="tea.quantity">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -55,7 +55,7 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
               </select>
-              <button type="submit" class="btn btn-warning btn-sm">add to cart</button>
+              <button type="submit" class="btn btn-warning btn-sm" ng-click="shop.addToCart(tea)">add to cart</button>
             </span>
           </form>
         </div>

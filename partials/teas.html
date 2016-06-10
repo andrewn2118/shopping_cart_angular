@@ -1,22 +1,13 @@
 <div class="container">
   <form class="form-inline category-form">
     <label>Search by category: </label>
-    <select class="form-control input-sm" ng-model="category">
+    <select class="form-control input-sm" ng-model="search.categories">
       <option value=""></option>
-      <option value="awesome">awesome</option>
-      <option value="cold">cold</option>
-      <option value="dark">dark</option>
-      <option value="dry">dry</option>
-      <option value="hot">hot</option>
-      <option value="lucid">lucid</option>
-      <option value="spring">spring</option>
-      <option value="summer">summer</option>
-      <option value="warm">warm</option>
-      <option value="winter">winter</option>
+      <option value="{{category}}" ng-repeat="category in shop.categories">{{category}}</option>
     </select>
 
     <label>Search by name: </label>
-    <input type="text" class="form-control input-sm" ng-model="search">
+    <input type="text" class="form-control input-sm" ng-model="search.$">
   </form>
 
   <a href="/checkout" role="button" class="btn btn-danger pull-right"><strong>Checkout</strong> | Bag: {{shop.cart || 'Empty!'}}</a>
@@ -35,7 +26,7 @@
         </form>
       </td>
     </tr>
-    <tr ng-repeat="tea in shop.inventory | orderBy : 'price' : reverse === 'low' ? false : true | filter : category"> 
+    <tr ng-repeat="tea in shop.inventory | orderBy : 'price' : reverse === 'low' ? false : true | filter : search"> 
       <td class="tea-col"><img ng-src="{{tea.imageUrl}}"></td>
       <td>
         <div>
@@ -43,18 +34,7 @@
           <form class="form-inline form-group-sm pull-right">
             <span class="form-group form-group-sm">
               <label><h3>Quanitity:</h3></label>
-              <select class="form-controler input-sm" ng-model="tea.addQuantity">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>
+              <input type="number" class="form-control input-sm" id="add-quantity" ng-model="tea.addQuantity">
               <button type="submit" class="btn btn-warning btn-sm" ng-click="shop.addToCart(tea)">add to cart</button>
             </span>
           </form>

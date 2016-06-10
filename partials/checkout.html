@@ -1,7 +1,7 @@
 <div class="container">
   <div>
     <h2 class="pull-left">My Shopping Bag</h2>
-    <h2 class="pull-right">Order Total: {{ total || '0' | currency}}</h2>
+    <h2 class="pull-right">Order Total: {{ checkout.total() || '0' | currency}}</h2>
   </div>
 
   <table class="table table-bordered">
@@ -21,11 +21,13 @@
         </div>
       </td>
       <td class="checkout-quantity">
-        <span>{{tea.quantity}}</span>
+        <span ng-hide="editTea === true">{{tea.quantity}}</span>
+        <input type="number" class="form-control input-sm" id="add-quantity" ng-model="tea.quantity" ng-show="editTea === true">
       </td>
-      <td class="checkout-subtotal"><span>{{tea.subtotal(tea.price, tea.quantity)}}</span></td>
+      <td class="checkout-subtotal"><span>{{checkout.subtotal(tea) | currency}}</span></td>
       <td class="checkout-btn">
-        <button class="btn btn-warning" ng-click="">Edit</button>
+        <button class="btn btn-warning" ng-click="editTea = !editTea" ng-init="editTea = false" ng-hide="editTea === true">Edit</button>
+        <button class="btn btn-warning" ng-click="editTea = !editTea" ng-show="editTea === true">Update</button>
         <button class="btn btn-danger" ng-click="checkout.deleteFromCart(tea)">Remove</button>
       </td>
     </tr>

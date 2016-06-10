@@ -25,3 +25,7 @@
 .checkout-quantity, .checkout-subtotal {
   width: 125px;
 }
+
+#add-quantity {
+  width: 60px;
+}
